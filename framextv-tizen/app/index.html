@@ -1,26 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src https://framextv.xyz https://*.framextv.xyz; object-src 'none'; base-uri 'none'">
-<title>FrameX TV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; media-src 'self' file:; connect-src 'none'; frame-src 'none'; object-src 'self'; base-uri 'none'; form-action 'none'">
+<title>FrameXTV</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<iframe id="website" title="FrameX TV website" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
-<main id="panel" role="status" aria-live="polite">
-  <h1>FrameX TV</h1>
-  <div id="spinner" aria-hidden="true"></div>
-  <h2 id="heading">Connecting…</h2>
-  <p id="message">Loading framextv.xyz</p>
-  <div id="actions" hidden>
-    <button id="retry">Retry</button>
-    <button id="continue">Show website</button>
-    <button id="exit">Exit app</button>
-  </div>
-  <p class="hint">Hold Back to exit. Back opens connection controls when received by the app.</p>
-</main>
+<div id="app-shell">
+  <aside id="sidebar" aria-label="Main navigation"></aside>
+  <main id="content" tabindex="-1"></main>
+  <div id="network" role="status" hidden></div>
+</div>
+<section id="player-screen" aria-label="Video player" hidden>
+  <object id="av-player" type="application/avplayer" hidden></object>
+  <video id="video" playsinline preload="metadata"></video>
+  <div id="player-shade"></div>
+  <div id="player-top"><span class="eyebrow" id="engine-label"></span><h1 id="player-title"></h1><p id="sample-label"></p></div>
+  <div id="buffering" role="status" hidden></div>
+  <div id="subtitle" aria-live="off"></div>
+  <div id="playback-message" role="alert" hidden></div>
+  <div id="player-bottom"><div id="time-row"><span id="time-current">0:00</span><div id="timeline" role="progressbar" aria-label="Playback progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="time-fill"></div></div><span id="time-total">0:00</span></div><div id="player-controls" class="actions"></div><p id="control-hint" class="muted"></p></div>
+</section>
+<div id="dialog" class="dialog-backdrop" role="dialog" aria-modal="true" aria-labelledby="dialog-title" hidden></div>
+<div id="toast" role="status" hidden></div>
+<script src="js/i18n.js"></script>
+<script src="js/store.js"></script>
+<script src="js/provider.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/player.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
