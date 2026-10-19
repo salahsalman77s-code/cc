@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #090d18; color: #f4f6ff; font-family: Arial, sans-serif; }
+iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #090d18; }
+main { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 5vh 8vw; text-align: center; background: #090d18; }
+[hidden] { display: none !important; }
+h1 { font-size: 5vh; margin: 0 0 3vh; } h2 { font-size: 3.5vh; }
+p { font-size: 2.5vh; max-width: 75vw; line-height: 1.5; }
+.hint { color: #a5aec5; font-size: 2vh; }
+button { padding: 1.5vh 2vw; margin: 1vh; border: .3vh solid #61708d; border-radius: 1vh; background: #18233a; color: white; font-size: 2.7vh; }
+button:focus { outline: .5vh solid #65caff; background: #24476c; }
+#spinner { width: 5vh; height: 5vh; border: .5vh solid #26334c; border-top-color: #65caff; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }

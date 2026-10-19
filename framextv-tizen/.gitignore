@@ -1,0 +1,6 @@
+app/.buildResult/
+*.wgt
+*.p12
+*.pfx
+profiles.xml
+__pycache__/

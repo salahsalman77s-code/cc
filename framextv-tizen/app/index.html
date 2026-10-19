@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-src https://framextv.xyz https://*.framextv.xyz; object-src 'none'; base-uri 'none'">
+<title>FrameX TV</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<iframe id="website" title="FrameX TV website" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+<main id="panel" role="status" aria-live="polite">
+  <h1>FrameX TV</h1>
+  <div id="spinner" aria-hidden="true"></div>
+  <h2 id="heading">Connecting…</h2>
+  <p id="message">Loading framextv.xyz</p>
+  <div id="actions" hidden>
+    <button id="retry">Retry</button>
+    <button id="continue">Show website</button>
+    <button id="exit">Exit app</button>
+  </div>
+  <p class="hint">Hold Back to exit. Back opens connection controls when received by the app.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
